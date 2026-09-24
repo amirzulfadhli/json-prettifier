@@ -20,13 +20,27 @@
       <div class="actions">
         <button id="format-button" type="button">Format</button>
         <button id="minify-button" class="secondary" type="button">Minify</button>
+        <button id="sort-button" class="secondary" type="button">Sort keys</button>
         <button id="clear-button" class="secondary" type="button">Clear</button>
+      </div>
+      <div class="file-actions">
+        <input id="file-input" type="file" accept=".json,application/json" hidden>
+        <button id="upload-button" class="secondary" type="button">Upload JSON</button>
+        <button id="download-button" class="secondary" type="button">Download formatted.json</button>
       </div>
       <p id="message" class="message" role="status" aria-live="polite"></p>
 
       <label for="json-output">Output</label>
       <textarea id="json-output" readonly spellcheck="false" aria-label="Formatted JSON output"></textarea>
       <button id="copy-button" class="copy" type="button">Copy output</button>
+
+      <div class="stats" aria-label="JSON statistics">
+        <div><span>Total keys</span><strong id="stat-keys">0</strong></div>
+        <div><span>Objects</span><strong id="stat-objects">0</strong></div>
+        <div><span>Arrays</span><strong id="stat-arrays">0</strong></div>
+        <div><span>Max depth</span><strong id="stat-depth">0</strong></div>
+        <div><span>Output size</span><strong id="stat-size">0 B</strong></div>
+      </div>
     </section>
   </main>
   <script src="script.js"></script>
